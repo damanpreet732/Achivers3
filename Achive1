@@ -1,0 +1,36 @@
+/*package whatever //do not write package name here */
+
+import java.util.*;
+
+class GFG {
+    static int [] addOne(int [] arr)
+    {
+        int val = 0 ;//for storing the value in intger
+        for(int i=0;i<arr.length;i++)
+        {
+            val *= 10 ;
+            val += arr[i] ;
+        }
+        val ++ ;// incrementing 
+        ArrayList<Integer> al = new ArrayList<> ();
+        while(val != 0)
+        {
+            al.add(0,val%10) ;//adding to first of list since we are taking values from last of intger
+            val /= 10; 
+        }
+        int narr [] =new int[al.size()] ;
+        for(int i=0;i<al.size();i++)
+        {
+            narr[i] = al.get(i);
+        }
+        return narr ;
+    }
+	public static void main (String[] args) {
+	    int arr[] = {9,9,9} ;
+	    int narr[] = addOne(arr); // calling addOne function 
+	    for(int i=0;i<narr.length;i++)
+	    {
+	        System.out.print(narr[i] + " ");// for printing added array 
+	    }
+	}
+}
